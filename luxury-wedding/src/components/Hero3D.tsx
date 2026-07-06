@@ -1,17 +1,35 @@
 'use client';
+import React, { useState, useRef } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Points, PointMaterial } from '@react-three/drei';
-import { useState, useRef } from 'react';
-import * as random from 'maath/random/dist/maath-random.esm';
+import * as THREE from 'three';
 
 function ParticleWaves() {
-  const ref = useRef<any>();
-  const [sphere] = useState(() => random.inSphere(new Float32Array(3000), { radius: 1.5 }) as Float32Array);
+  const ref = useRef<THREE.Points>(null);
+
+  // توليد نقاط عشوائية داخل كرة بديلة لنفس تأثير مكتبة maath لتفادي مشكلة البناء
+  const [sphere] = useState(() => {
+    const count = 2000;
+    const positions = new Float32Array(count * 3);
+    for (let i = 0; i < count; i++) {
+      // توليد عشوائي متناسق داخل نصف قطر 1.5
+      const u = Math.random();
+      const v = Math.random();
+      const theta = u * 2.0 * Math.PI;
+      const phi = Math.acos(2.0 * v - 1.0);
+      const r = 1.5 * Math.cbrt(Math.random());
+      
+      positions[i * 3] = r * Math.sin(phi) * Math.cos(theta);
+      positions[i * 3 + 1] = r * Math.sin(phi) * Math.sin(theta);
+      positions[i * 3 + 2] = r * Math.cos(phi);
+    }
+    return positions;
+  });
 
   useFrame((state, delta) => {
     if (ref.current) {
-      ref.current.rotation.x -= delta / 12;
-      ref.current.rotation.y -= delta / 15;
+      ref.current.rotation.x -= delta / 15;
+      ref.current.rotation.y -= delta / 20;
     }
   });
 
@@ -21,10 +39,10 @@ function ParticleWaves() {
         <PointMaterial
           transparent
           color="#D4AF37"
-          size={0.004}
+          size={0.005}
           sizeAttenuation={true}
           depthWrite={false}
-          opacity={0.35}
+          opacity={0.4}
         />
       </Points>
     </group>

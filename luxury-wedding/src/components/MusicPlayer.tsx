@@ -1,6 +1,6 @@
 'use client';
-import { useState, useRef } from 'react';
-import { Volume2, VolumeX } from 'lucide-react';
+import React, { useState, useRef } from 'react';
+import { VolumeX } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export default function MusicPlayer() {
@@ -9,7 +9,7 @@ export default function MusicPlayer() {
 
   const togglePlay = () => {
     if (!audioRef.current) {
-      audioRef.current = new Audio('https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3');
+      audioRef.current = new Audio('https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3'); 
       audioRef.current.loop = true;
       audioRef.current.volume = 0.4;
     }
@@ -17,7 +17,7 @@ export default function MusicPlayer() {
     if (isPlaying) {
       audioRef.current.pause();
     } else {
-      audioRef.current.play().catch(e => console.log("Audio play blocked by browser setup"));
+      audioRef.current.play().catch(() => console.log("Audio play blocked"));
     }
     setIsPlaying(!isPlaying);
   };

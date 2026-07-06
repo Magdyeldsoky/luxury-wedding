@@ -1,4 +1,5 @@
 'use client';
+import React from 'react';
 import { motion, useMotionValue, useTransform } from 'framer-motion';
 import { Sparkles } from 'lucide-react';
 
@@ -6,12 +7,11 @@ export default function InvitationCard() {
   const x = useMotionValue(0);
   const y = useMotionValue(0);
 
-  // تأثير الماوس هيشتغل فقط بالشاشات الكبيرة
   const rotateX = useTransform(y, [-100, 100], [8, -8]);
   const rotateY = useTransform(x, [-100, 100], [-8, 8]);
 
-  function handleMouseMove(event: any) {
-    if (window.innerWidth < 768) return; // تعطيل اللمس على الموبايل لعدم إعاقة الاسكرول
+  function handleMouseMove(event: React.MouseEvent<HTMLDivElement>) {
+    if (window.innerWidth < 768) return; 
     const card = event.currentTarget.getBoundingClientRect();
     const width = card.width;
     const height = card.height;
@@ -53,7 +53,7 @@ export default function InvitationCard() {
               بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ
             </h3>
             <p className="font-cairo text-xs md:text-base text-luxury-cream/70 leading-relaxed max-w-xs mx-auto px-1">
-              "وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً"
+              &ldquo;وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً&rdquo;
             </p>
             <p className="font-cairo text-xs md:text-sm text-luxury-gold/80 max-w-xs mx-auto leading-relaxed">
               يسعدنا ويشرفنا دعوتكم لحضور حفل زفافنا ومشاركتنا فرحتنا، وبحضوركم تكتمل بهجتنا.

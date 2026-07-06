@@ -1,5 +1,5 @@
 'use client';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const quotes = [
@@ -31,7 +31,7 @@ export default function Quotes() {
             transition={{ duration: 0.8 }}
             className="font-cairo text-base md:text-xl text-luxury-champagne/80 font-light italic leading-relaxed"
           >
-            "{quotes[index]}"
+            &ldquo;{quotes[index]}&rdquo;
           </motion.p>
         </AnimatePresence>
       </div>
