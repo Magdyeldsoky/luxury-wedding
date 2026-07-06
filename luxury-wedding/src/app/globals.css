@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+@theme {
+  --color-luxury-black: #0A0A0A;
+  --color-luxury-dark: #121212;
+  --color-luxury-cream: #FDFBF7;
+  --color-luxury-white: #FFFFFF;
+  --color-luxury-champagne: #F7E7CE;
+  --color-luxury-gray: #1F1F1F;
+  
+  --color-luxury-gold: #D4AF37;
+  --color-luxury-gold-light: #F3E5AB;
+  --color-luxury-gold-dark: #AA7C11;
+
+  --font-cairo: var(--font-cairo), sans-serif;
+  --font-alexandria: var(--font-alexandria), sans-serif;
+}
+
+@layer base {
+  body {
+    background-color: #0A0A0A;
+    color: #FDFBF7;
+  }
+}
+
+.noise-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  content: "";
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: 9999;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(212, 175, 55, 0.15);
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, #FFFDF7 0%, #D4AF37 50%, #AA7C11 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-border-glow:hover {
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.2);
+  border-color: rgba(212, 175, 55, 0.4);
+  transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0A0A0A;
+}
+::-webkit-scrollbar-thumb {
+  background: #D4AF37;
+  border-radius: 3px;
+}
