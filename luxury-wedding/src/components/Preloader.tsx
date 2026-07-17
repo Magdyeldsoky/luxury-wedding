@@ -35,7 +35,7 @@ export default function Preloader({ onComplete }: { onComplete: () => void }) {
           البوابة الرقمية الملكية
         </motion.p>
         <h1 className="text-4xl md:text-5xl font-alexandria font-bold gold-gradient-text mb-12">
-          مجدي &amp; رحمه
+          مجدي &amp; هاجر
         </h1>
         <div className="w-48 h-[1px] bg-white/10 relative mx-auto overflow-hidden">
           <motion.div
