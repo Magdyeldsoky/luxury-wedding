@@ -22,7 +22,7 @@ export default function Hero() {
             ❤️
           </span>
           <h1 className="text-5xl sm:text-6xl md:text-8xl font-alexandria font-extrabold gold-gradient-text tracking-wide drop-shadow-2xl">
-هاجر          </h1>
+نورهان          </h1>
         </div>
 
         <div className="w-16 md:w-24 h-[1px] bg-gradient-to-r from-transparent via-luxury-gold to-transparent mx-auto mb-6 md:mb-8" />
