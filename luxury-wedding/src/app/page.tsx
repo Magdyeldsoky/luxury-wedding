@@ -30,7 +30,7 @@ export default function Home() {
           <MusicPlayer />
           
           <footer className="w-full py-12 border-t border-white/5 text-center font-cairo text-sm text-luxury-cream/40 flex flex-col items-center gap-2 bg-luxury-dark/20 relative z-10">
-            <p className="text-base text-luxury-champagne font-bold tracking-widest">مجدي ❤️ هاجر</p>
+            <p className="text-base text-luxury-champagne font-bold tracking-widest">مجدي ❤️ نورهان</p>
             <p className="font-alexandria font-light text-xs tracking-wider">Made with ❤️ • {new Date().getFullYear()}</p>
           </footer>
         </main>
