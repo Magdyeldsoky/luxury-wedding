@@ -23,7 +23,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "دعوة زفاف: مجدي ❤️ نورهان",
+  title: "دعوة زفاف: مجدي ❤️ منه",
   description: "يسرنا دعوتكم لمشاركتنا أجمل لحظات حياتنا - الموقع الرسمي لدعوة زفاف مجدي ورامه",
 };
 
